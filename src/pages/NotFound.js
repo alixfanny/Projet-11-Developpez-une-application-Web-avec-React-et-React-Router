@@ -1,5 +1,11 @@
 function NotFound() {
-    return <h1>Page NotFound</h1>;
+    return(
+      <div className="not_found_texte">
+        <p className="error-number">404</p>
+        <p className="texte">Oups! La page que vous demandez n'existe pas.</p>
+        <p className="link">Retourner sur la page d'accueil</p>
+      </div>
+    )
   }
   
   export default NotFound;

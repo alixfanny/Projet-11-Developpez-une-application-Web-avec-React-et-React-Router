@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "montserrat";
+    src: url('../src/logo/Montserrat-VariableFont_wght.ttf');
+}
+
+// Défini les variables pour les différentes tailles d'écran
+$breakpoints: (
+small: 576px,
+    medium: 768px,
+    large: 992px,
+    xlarge: 1200px
+);
+// mixin media queries
+@mixin for-size($breakpoint){
+    @if map-has-key($breakpoints, $breakpoint){
+    @media (max-width: map-get($breakpoints, $breakpoint)){
+        @content;
+    }
+    }@else{
+        @warn "Unknown breakpoint: #{$breakpoint}."
+    }
+};
+
+// css header
+.header{
+    font-family: "montserrat";
+    display: flex;
+    justify-content: space-between;
+    color: #ff6060;
+    padding: 2% 4%;
+
+    @include for-size(small){
+        align-items: center;
+    }
+
+    .logo-header{
+        width: 11%;
+
+        @include for-size(small){
+            width: 37%;
+        }
+    }
+
+    ul{
+        display: flex;
+    }
+
+    a{
+        color: #ff6060;
+        font-size: 24px;
+
+        @include for-size(small){
+            font-size: 18px;
+        }
+    }
+
+    .acceuil{
+        margin-right: 55px;
+    }
+}
+
+// css footer
+.footer{
+    font-family: "montserrat";
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+
+    @include for-size(small){
+        padding-top: 8%;
+    }
+
+    .logo-footer{
+        width: 6.5%;
+        margin-bottom: 1.5% ;
+
+        @include for-size(small){
+            width: 28.5%;
+            margin-bottom: 5.5%;
+        }
+    }
+
+    .text-footer{
+        font-size: 24px;
+        margin-bottom: 1%;
+
+        @include for-size(small){
+            font-size: 12px;
+            margin-bottom: 7%;
+        }
+    }
+}
+
+.container-home-page{
+    padding: 2% 4%;
+
+    .filter-img{
+        position: absolute;
+        background-color: black;
+        opacity: 0.30;
+        width: 92vw;
+        height: 31.5vh;
+        left: 0;
+        margin-left: 4%;
+        border-radius: 25px;
+
+        @include for-size(small){
+            height: 12vh;
+        }
+    }
+
+    .containt-img{
+        max-width: 100%;
+        max-height: auto;
+        overflow: hidden;
+        border-radius: 25px;
+
+        @include for-size(small){
+            height: 12vh;
+        }
+    }
+}

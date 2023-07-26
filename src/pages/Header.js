@@ -1,18 +1,21 @@
+import '../style.css';
+import '../reset.css';
+import logo_header from '../logo/logo_header.svg';
 import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header>
-            <img>logo kasa-</img>
-            <nav>
+        <div className="header">
+            <img className='logo-header' src={logo_header} alt='logo' />
+            <nav className='menu-header'>
                 <ul>
-                    <li><Link to="/Home">Accueil</Link></li>
-                    <li><Link to="/Apropos">À propos</Link></li>
+                    <li className='acceuil'><Link to="/">Accueil</Link></li>
+                    <li className='apropos'><Link to="/Apropos">A Propos</Link></li>
                 </ul>
             </nav>
-        </header>
+        </div>
     );
 }
-  
-  export default Header;
+        
+export default Header;
   
