@@ -8,6 +8,7 @@ function Home() {
     return (
         <div className='container-home-page'>
             <Banniere imgSrc={image_acceuil} imgAlt="montagne verte et brune à côté d'un plan d'eau pendant la journée" />
+            <p className='banniere-text'>Chez vous, partout et ailleurs</p>
             <div className='background-home'>
                 <Cards />
             </div>

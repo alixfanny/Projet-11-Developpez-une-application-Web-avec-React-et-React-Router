@@ -1,10 +1,16 @@
-function Cards({imgSrc, imgAlt, nameLocation}) {
+import React from "react";
+
+const data = require("../fichiers.json");
+
+function Cards() {
     return(
-        <div>
-            <div className="content-img-cards">
-                <img src={imgSrc} alt={imgAlt} />
-            </div>
-            <p>{nameLocation}</p>
+        <div className="card-container">
+            {data.map((location) => (
+                <div key={location.id} className="card">
+                    <img src={location.cover} alt={location.title} />
+                    <div className="card-title">{location.title}</div>
+                </div>
+            ))}
         </div>
     )
 }
