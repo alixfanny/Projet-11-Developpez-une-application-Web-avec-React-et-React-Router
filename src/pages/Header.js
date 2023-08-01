@@ -1,5 +1,4 @@
 import '../style.css';
-import '../reset.css';
 import logo_header from '../logo/logo_header.svg';
 import { Link } from 'react-router-dom';
 

@@ -3,13 +3,16 @@
     src: url('../src/logo/Montserrat-VariableFont_wght.ttf');
 }
 
-// Défini les variables pour les différentes tailles d'écran
+// Défini les variables
 $breakpoints: (
 small: 576px,
     medium: 768px,
     large: 992px,
     xlarge: 1200px
 );
+$primary-color: #ff6060;
+$secondary-color: #f6f6f6;
+
 // mixin media queries
 @mixin for-size($breakpoint){
     @if map-has-key($breakpoints, $breakpoint){
@@ -26,11 +29,12 @@ small: 576px,
     font-family: "montserrat";
     display: flex;
     justify-content: space-between;
-    color: #ff6060;
+    color: $primary-color;
     padding: 2% 4%;
 
     @include for-size(small){
         align-items: center;
+        padding: 5% 4%;
     }
 
     .logo-header{
@@ -43,10 +47,18 @@ small: 576px,
 
     ul{
         display: flex;
+
+        @include for-size(small){
+            padding-top: 8%;
+        }
+    }
+
+    li{
+        list-style: none;
     }
 
     a{
-        color: #ff6060;
+        color: $primary-color;
         font-size: 24px;
 
         @include for-size(small){
@@ -95,23 +107,26 @@ small: 576px,
     }
 }
 
-.container-home-page{
+.container{
     padding: 2% 4%;
     font-family: "montserrat";
+    max-width: 93vw !important;
 
     .filter-img{
         position: absolute;
         background-color: black;
         opacity: 0.30;
-        width: 92vw;
+        width: 91.8vw;
         height: 31.5vh;
         left: 0;
-        margin-left: 4%;
+        margin-left: 4.1%;
         border-radius: 25px;
 
         @include for-size(small){
-            height: 12vh;
+            height: 18vh;
             z-index: 2;
+            margin-left: 6.1%;
+            width: 87.8vw;
         }
     }
 
@@ -125,12 +140,12 @@ small: 576px,
 
     .containt-img{
         max-width: 100%;
-        max-height: auto;
+        max-height: 297px;
         overflow: hidden;
         border-radius: 25px;
 
         @include for-size(small){
-            height: 12vh;
+            max-height: 167px;
         }
     }
 
@@ -144,31 +159,39 @@ small: 576px,
 
         @include for-size(small){
             font-size: 24px;
-            top: 12%;
-            right: 13%;
+            top: 19%;
+            right: 10%;
         }
     }
 
     .background-home{
-        background-color: #f6f6f6;
+        background-color: $secondary-color;
         border-radius: 25px;
         margin-top: 5%;
-        height: 303vh;
 
         .card-container{
             display: grid;
             grid-template-columns: 30% 30% 30%;
-            gap: 2%;
+            gap: 38px;
             padding-left: 5%;
             padding-top: 5%;
-            height: 286vh;
+
+            @include for-size(small){
+                display: block;
+                width: 83vw;
+            }
         }
+        
 
         .card{
             max-height: 341px;
             overflow: hidden;
             border-radius: 10px;
             position: relative;
+
+            @include for-size(small){
+                margin-bottom: 5%;
+            }
         }
 
         img{
@@ -177,7 +200,7 @@ small: 576px,
 
         .card-title{
             position: absolute;
-            bottom: 0;
+            bottom: -8px;
             left: 0;
             right: 0;
             padding: 10px;
@@ -187,3 +210,95 @@ small: 576px,
         }
     }
 }
+
+.container-collapse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .my-collapse{
+    background-color: $primary-color;
+    margin-top: 2%;
+    border-radius: 10px;
+    width: 70%;
+    color: white;
+
+    @include for-size(small){
+        margin-top: 5%;
+    }
+
+    .button{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+        .btn{
+            color: white;
+            font-size: 24px;
+
+            @include for-size(small){
+                font-size: 13px;
+            }
+        }
+
+        svg{
+            font-size: 24px;
+            padding-right: 2%;
+
+            @include for-size(small){
+                font-size: 18px;
+            }
+        }
+
+    }
+
+    .card{
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+}
+
+.not_found_texte{
+    font-family: "montserrat";
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 7%;
+
+    .error-number{
+        font-size: 288px;
+        font-weight: 700;
+
+        @include for-size(small){
+            font-size: 96px;
+            margin-top: 30%;
+        }
+    }
+
+    .texte{
+        font-size: 36px;
+        font-weight: 500;
+
+        @include for-size(small){
+            font-size: 18px;
+            margin-left: 26%;
+        }
+    }
+
+    .link{
+        padding-top: 7%;
+        color: $primary-color;
+        font-size: 18px;
+        font-weight: 500;
+
+        @include for-size(small){
+            font-size: 14px;
+            padding-top: 30%;
+            margin-bottom: 32%;
+        }
+    }
+}
+
+

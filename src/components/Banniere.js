@@ -1,9 +1,14 @@
-import '../style.css';
-import '../reset.css';
+function Banniere({imgSrc, imgAlt, pageType}) {
+    let className = 'containt-img';
 
-function Banniere({imgSrc, imgAlt}) {
+    if (pageType === 'home') {
+        className += ' home';
+    } else if (pageType === 'apropos') {
+        className += ' apropos';
+    }
+
     return (
-        <div className='containt-img'>
+        <div className={className}>
             <div className='filter-img'></div>
             <img className='image' src={imgSrc} alt={imgAlt} />
         </div>
