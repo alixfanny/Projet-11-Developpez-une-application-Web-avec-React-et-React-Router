@@ -10,7 +10,9 @@ function Banniere({imgSrc, imgAlt, pageType}) {
     return (
         <div className={className}>
             <div className='filter-img'></div>
-            <img className='image' src={imgSrc} alt={imgAlt} />
+            <div className="wrapper-image-banniere">
+                <img className='image' src={imgSrc} alt={imgAlt} />
+            </div>
         </div>
 
     )

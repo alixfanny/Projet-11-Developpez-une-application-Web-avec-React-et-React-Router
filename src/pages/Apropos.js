@@ -5,7 +5,7 @@ import MyCollapse from '../components/MyCollapse';
 
 function Apropos() {
     return (
-        <div className='container'>
+        <div className='container-page-apropos'>
             <Banniere imgSrc={image_apropos} imgAlt="montagne verte à travers le plan d'eau" pageType="apropos" />
             <div className='container-collapse'>
                 <MyCollapse id="fiabilite" title="Fiabilité" content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."/>

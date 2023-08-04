@@ -12,6 +12,8 @@ small: 576px,
 );
 $primary-color: #ff6060;
 $secondary-color: #f6f6f6;
+$large-font-size: 24px;
+$small-font-size: 18px;
 
 // mixin media queries
 @mixin for-size($breakpoint){
@@ -23,6 +25,12 @@ $secondary-color: #f6f6f6;
         @warn "Unknown breakpoint: #{$breakpoint}."
     }
 };
+// Déclaration des mixin
+@mixin display($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
 
 // css header
 .header{
@@ -59,10 +67,10 @@ $secondary-color: #f6f6f6;
 
     a{
         color: $primary-color;
-        font-size: 24px;
+        font-size: $large-font-size;
 
         @include for-size(small){
-            font-size: 18px;
+            font-size: $small-font-size;
         }
     }
 
@@ -73,14 +81,13 @@ $secondary-color: #f6f6f6;
 
 // css footer
 .footer{
+    @include display(center, center);
     font-family: "montserrat";
     background-color: black;
     color: white;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding-top: 3%;
+    margin-top: 8%;
 
     @include for-size(small){
         padding-top: 8%;
@@ -97,7 +104,7 @@ $secondary-color: #f6f6f6;
     }
 
     .text-footer{
-        font-size: 24px;
+        font-size: $large-font-size;
         margin-bottom: 1%;
 
         @include for-size(small){
@@ -107,16 +114,57 @@ $secondary-color: #f6f6f6;
     }
 }
 
-.container{
-    padding: 2% 4%;
+// css error-page
+.not_found_texte{
     font-family: "montserrat";
-    max-width: 93vw !important;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 7%;
+
+    .error-number{
+        font-size: 288px;
+        font-weight: 700;
+
+        @include for-size(small){
+            font-size: 96px;
+            margin-top: 30%;
+        }
+    }
+
+    .texte{
+        font-size: 36px;
+        font-weight: 500;
+
+        @include for-size(small){
+            font-size: $small-font-size;
+            margin-left: 26%;
+        }
+    }
+
+    .link{
+        padding-top: 7%;
+        color: $primary-color;
+        font-size: $small-font-size;
+        font-weight: 500;
+
+        @include for-size(small){
+            font-size: 14px;
+            padding-top: 30%;
+            margin-bottom: 32%;
+        }
+    }
+}
+
+// css general banniere
+.containt-img{
 
     .filter-img{
         position: absolute;
         background-color: black;
         opacity: 0.30;
-        width: 91.8vw;
+        width: 91.7vw;
         height: 31.5vh;
         left: 0;
         margin-left: 4.1%;
@@ -130,24 +178,130 @@ $secondary-color: #f6f6f6;
         }
     }
 
-    @include for-size(small){
-        .image{
-            position: relative;
-            z-index: 0;
-            right: 105%;
-        }
-    }
-
-    .containt-img{
-        max-width: 100%;
-        max-height: 297px;
+    .wrapper-image-banniere{
         overflow: hidden;
         border-radius: 25px;
+        height: 230px;
+
 
         @include for-size(small){
-            max-height: 167px;
+            max-width: 100%;
+            max-height: 162px;
+        }
+
+        .image{
+            @include for-size(small){
+                transform: translate(-35%, -25%) scale(0.6);
+            }
+        }
+      
+    }
+
+}
+
+//css general collapse
+.my-collapse{
+    background-color: $primary-color;
+    margin-top: 2%;
+    border-radius: 10px;
+    width: 70%;
+    color: white;
+    cursor: pointer;
+    
+    @include for-size(small){
+        margin-top: 5%;
+    }
+
+    .button{
+        @include display(space-between, baseline);
+    
+        .btn{
+            color: white;
+            font-size: $large-font-size;
+    
+            @include for-size(small){
+                font-size: 13px;
+            }
+        }
+    
+        svg{
+            font-size: $large-font-size;
+            padding-right: 2%;
+    
+            @include for-size(small){
+                font-size: $small-font-size;
+            }
         }
     }
+
+    .card{
+        color: $primary-color;
+        background-color: $secondary-color;
+    }
+}
+
+//css general gallery
+.gallery{
+    .button-chrevon-gallery{
+        border: none;
+        background: none;
+        font-size: 61px;
+        position: absolute;
+        top: 47%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 3;
+        color: white;
+
+        @include for-size(small){
+            top: 26%;
+            font-size: 35px;
+        }
+    }
+    .button-chrevon-left{
+        left: 5%;
+    }
+    .button-chrevon-right{
+        right: 5%;
+    }
+    .image-wrapper{
+        position: relative;
+        width: 92vw;
+        height: 415px;
+        overflow: hidden;
+        border-radius: 25px;
+        @include display(center, center);
+
+        @include for-size(small){
+            height: 27vh;
+        }
+    
+        .images-logement{
+            width: 100%;
+
+            @include for-size(small){
+                height: inherit;
+            }
+        }
+    }
+    .image-count{
+        position: absolute;
+        top: 68%;
+        left: 50%;
+        color: white;
+
+        @include for-size(small){
+            top: 33%;
+            left: 47%;
+        }
+    }
+}
+
+// css home page
+.container{
+    padding: 2% 4%;
+    font-family: "montserrat";
+    max-width: 93vw !important;
 
     .banniere-text{
         position: absolute;
@@ -158,7 +312,7 @@ $secondary-color: #f6f6f6;
         color: white;
 
         @include for-size(small){
-            font-size: 24px;
+            font-size: $large-font-size;
             top: 19%;
             right: 10%;
         }
@@ -188,6 +342,7 @@ $secondary-color: #f6f6f6;
             overflow: hidden;
             border-radius: 10px;
             position: relative;
+            cursor: pointer;
 
             @include for-size(small){
                 margin-bottom: 5%;
@@ -211,94 +366,184 @@ $secondary-color: #f6f6f6;
     }
 }
 
+// css page a propos
+.container-page-apropos{
+    margin-left: 4%;
+    margin-right: 4%;
+
+    .filter-img{
+        @include for-size(small){
+            margin-left: 4%;
+            width: 92%;
+            height: 20%;
+        }
+    }
+
+    .wrapper-image-banniere{
+        @include for-size(small){
+            max-width: 100%;
+            max-height: 180px;
+        }
+        
+        .image{
+            @include for-size(small){
+            transform: translate(-28%, -31%) scale(0.6); 
+            }
+        }
+    }
+}
 .container-collapse{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-    .my-collapse{
-    background-color: $primary-color;
-    margin-top: 2%;
-    border-radius: 10px;
-    width: 70%;
-    color: white;
+// css page logement
+.container-logement{
+    margin-left: 4%;
+    margin-right: 4%;
 
-    @include for-size(small){
-        margin-top: 5%;
-    }
-
-    .button{
+    .information{
+        color: $primary-color;
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
-    }
+        margin-top: 3%;
 
-        .btn{
-            color: white;
-            font-size: 24px;
+        @include for-size(small) {
+            display: block;
+        }
+    
+        .information-hote{
+            width: 17%;
+
+            @include for-size(small) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row-reverse;
+                width: 100%;
+            }
+        }
+    
+        .title-location{
+            font-size: 36px;
+
+            @include for-size(small) {
+                font-size: $small-font-size;
+            }
+        }
+    
+        .location{
+            font-size: $small-font-size;
+
+            @include for-size(small) {
+                font-size: 14px;
+            }
+        }
+    
+        .tags{
+            display: flex;
+    
+            .tag{
+                background-color: $primary-color;
+                color: white;
+                border-radius: 10px;
+                padding: 1% 6%;
+                font-size: 14px;
+                margin-right: 8%;
+            }
+        }  
+    
+        .hote{
+            display: flex;
+            justify-content: space-between;
+            font-size: 29px;
+
+            @include for-size(small) {
+                font-size: 12px;
+                width: 27%;
+            }
+    
+            .hote-name{
+                text-align: end;
+    
+                .prenom{
+                    margin: 0;
+                }
+            }
+    
+            .wrapper-image-hote{
+                border-radius: 50%;
+                overflow: hidden;
+                width: 100px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include for-size(small) {
+                    width: 50px;
+                    height: 50px;
+                }
+    
+                .img-hote{
+                    transform: scale(0.8);
+
+                    @include for-size(small){
+                        transform: scale(0.5);
+                    }
+                }
+    
+    
+            }
+        }
+    
+        .stars{
+            display: flex;
+            font-size: 26px;
 
             @include for-size(small){
-                font-size: 13px;
+                font-size: $small-font-size;
+            }
+            
+
+            .star{
+                margin-right: 10%;
+                color: $primary-color;
+            }
+
+            .star-inactive{
+                color: #e3e3e3;
             }
         }
 
-        svg{
-            font-size: 24px;
-            padding-right: 2%;
+    }
+    .description{
+        display: flex;
+        margin-bottom: 16%;
+        justify-content: space-between;
+
+        @include for-size(small) {
+            display: block;
+        }
+    
+        .my-collapse{
+            width: 45%;
+            max-height: 50px;
 
             @include for-size(small){
-                font-size: 18px;
+                width: 100%;
+            }
+
+    
+            .card-body{
+                color: $primary-color;
+                background-color: $secondary-color;
             }
         }
-
-    }
-
-    .card{
-        color: $primary-color;
-        background-color: $secondary-color;
     }
 }
 
-.not_found_texte{
-    font-family: "montserrat";
-    color: $primary-color;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 7%;
 
-    .error-number{
-        font-size: 288px;
-        font-weight: 700;
-
-        @include for-size(small){
-            font-size: 96px;
-            margin-top: 30%;
-        }
-    }
-
-    .texte{
-        font-size: 36px;
-        font-weight: 500;
-
-        @include for-size(small){
-            font-size: 18px;
-            margin-left: 26%;
-        }
-    }
-
-    .link{
-        padding-top: 7%;
-        color: $primary-color;
-        font-size: 18px;
-        font-weight: 500;
-
-        @include for-size(small){
-            font-size: 14px;
-            padding-top: 30%;
-            margin-bottom: 32%;
-        }
-    }
-}
 
 
