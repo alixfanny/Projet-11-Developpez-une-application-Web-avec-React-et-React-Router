@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+.container {
+  padding: 2% 4%;
+  font-family: "montserrat";
+  max-width: 93vw !important;
+}
+.container .banniere-text {
+  position: absolute;
+  z-index: 3;
+  top: 32%;
+  right: 31%;
+  font-size: 48px;
+  color: white;
+}
+@media (max-width: 576px) {
+  .container .banniere-text {
+    font-size: 20px;
+    top: 24%;
+    right: 10%;
+  }
+}
+.container .background-home {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  margin-top: 5%;
+}
+.container .background-home .card-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 38px;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+@media (max-width: 576px) {
+  .container .background-home .card-container {
+    display: block;
+    width: 83vw;
+  }
+}
+.container .background-home .card {
+  max-height: 341px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .container .background-home .card {
+    margin-bottom: 5%;
+  }
+}
+.container .background-home img {
+  height: 340px;
+}
+.container .background-home .card-title {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+}/*# sourceMappingURL=home.css.map */

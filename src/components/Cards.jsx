@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { data } from "../data";
 
-function Cards() {
+function Cards({locations}) {
     return(
         <div className="card-container">
-            {data.map((location) => {
+            {locations.map((location) => {
                 return(
                     <div key={location.id} className="card">
                         <Link to={`/Logement/${location.id}`}>

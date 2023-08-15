@@ -1,9 +1,10 @@
 import React, { useState }  from 'react';
+import '../css/components/collapse.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 
-function MyCollapse({title, content}) {
+function Collapse({title, content}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -34,4 +35,4 @@ function MyCollapse({title, content}) {
   );
 }
 
-export default MyCollapse;
+export default Collapse;

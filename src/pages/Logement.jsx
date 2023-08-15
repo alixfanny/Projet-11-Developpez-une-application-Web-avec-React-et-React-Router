@@ -1,18 +1,29 @@
 import Gallery from '../components/Gallery';
-import MyCollapse from '../components/MyCollapse';
-import { useParams } from 'react-router-dom';
+import Collapse from '../components/Collapse';
+import Tags from '../components/Tags';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { data } from '../data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar} from '@fortawesome/free-solid-svg-icons'
+import '../css/pages/logement.css';
 
 function Logement() {
 
   const { id: logementId } = useParams();
+  const navigate = useNavigate();
   const logement = data.find(item => item.id === logementId);
 
+  useEffect(() =>{
+    if (!logement) {
+      navigate('/NotFound');
+    }
+  }, [logement, navigate]);
+
   if (!logement) {
-    return <div>Logement non trouvé</div>;
+    return null;
   }
+  
   const { title, location, tags, host, rating } = logement;
     return (
       <div className='container-logement'>
@@ -21,11 +32,7 @@ function Logement() {
             <div className='information-logement'>
               <h2 className='title-location'>{title}</h2>
               <p className='localisation'>{location}</p>
-              <div className='tags'>
-                {tags.map((tag, index) => (
-                  <p key={index} className='tag'>{tag}</p>
-                ))}
-              </div>
+              <Tags locations={tags}/>
             </div>
             <div className='information-hote'>
               <div className='hote'>
@@ -45,8 +52,8 @@ function Logement() {
             </div>
           </div>
           <div className='description'>
-            <MyCollapse title="Description" content={logement.description} id="descriptionCollapse"/>
-            <MyCollapse 
+            <Collapse title="Description" content={logement.description} id="descriptionCollapse"/>
+            <Collapse 
               title="Équipements" 
               content={
                 <ul>

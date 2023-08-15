@@ -1,3 +1,5 @@
+import '../css/components/banniere.css'
+
 function Banniere({imgSrc, imgAlt, pageType}) {
     let className = 'containt-img';
 
