@@ -12,25 +12,20 @@
         margin-top: 5%;
     }
 
-    .button{
+    .button {
         @include display(space-between, baseline);
-    
-        .btn{
+
+        .btn, svg {
             color: white;
             font-size: $large-font-size;
-    
-            @include for-size(small){
-                font-size: 13px;
-            }
-        }
-    
-        svg{
-            font-size: $large-font-size;
-            padding-right: 2%;
-    
-            @include for-size(small){
+
+            @include for-size(small) {
                 font-size: $small-font-size;
             }
+        }
+
+        svg {
+            padding-right: 2%;
         }
     }
 

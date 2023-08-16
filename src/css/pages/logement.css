@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*, *::before, *::after {
+  font-family: "montserrat";
+}
+
 .container-logement {
   margin-left: 4%;
   margin-right: 4%;
 }
 .container-logement .information {
-  color: #ff6060;
   display: flex;
   justify-content: space-between;
   margin-top: 3%;
+  color: #ff6060;
 }
 @media (max-width: 576px) {
   .container-logement .information {
@@ -41,17 +45,6 @@
   .container-logement .information .location {
     font-size: 14px;
   }
-}
-.container-logement .information .tags {
-  display: flex;
-}
-.container-logement .information .tags .tag {
-  background-color: #ff6060;
-  color: white;
-  border-radius: 10px;
-  padding: 1% 6%;
-  font-size: 14px;
-  margin-right: 8%;
 }
 .container-logement .information .hote {
   display: flex;
@@ -96,15 +89,12 @@
 .container-logement .information .stars {
   display: flex;
   font-size: 26px;
+  justify-content: space-between;
 }
 @media (max-width: 576px) {
   .container-logement .information .stars {
     font-size: 18px;
   }
-}
-.container-logement .information .stars .star {
-  margin-right: 10%;
-  color: #ff6060;
 }
 .container-logement .information .stars .star-inactive {
   color: #e3e3e3;
@@ -129,7 +119,6 @@
   }
 }
 .container-logement .description .my-collapse .card-body {
-  color: #ff6060;
   background-color: #f6f6f6;
 }
 .container-logement .description .my-collapse .card-body ul {

@@ -1,19 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*, *::before, *::after {
+  font-family: "montserrat";
+}
+
+.gallery .button-chrevon-gallery, .gallery .image-count {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .gallery .button-chrevon-gallery, .gallery .image-count {
+    font-size: 35px;
+  }
+}
 .gallery .button-chrevon-gallery {
   border: none;
   background: none;
   font-size: 61px;
-  position: absolute;
   top: 47%;
   transform: translateY(-50%);
-  cursor: pointer;
   z-index: 3;
-  color: white;
 }
 @media (max-width: 576px) {
   .gallery .button-chrevon-gallery {
     top: 31%;
-    font-size: 35px;
   }
 }
 .gallery .button-chrevon-left {
@@ -46,10 +56,8 @@
   }
 }
 .gallery .image-count {
-  position: absolute;
   top: 68%;
   left: 50%;
-  color: white;
 }
 @media (max-width: 576px) {
   .gallery .image-count {

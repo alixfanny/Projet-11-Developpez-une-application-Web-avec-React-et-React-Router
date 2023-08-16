@@ -2,7 +2,6 @@
 
 .footer{
     @include display(center, center);
-    font-family: "montserrat";
     background-color: black;
     color: white;
     flex-direction: column;
@@ -25,6 +24,7 @@
 
     .text-footer{
         font-size: $large-font-size;
+        color: white;
         margin-bottom: 1%;
 
         @include for-size(small){

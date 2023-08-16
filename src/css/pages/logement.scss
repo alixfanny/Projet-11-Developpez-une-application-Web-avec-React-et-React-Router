@@ -5,10 +5,10 @@
     margin-right: 4%;
 
     .information{
-        color: $primary-color;
         display: flex;
         justify-content: space-between;
         margin-top: 3%;
+        color: $primary-color;
 
         @include for-size(small) {
             display: block;
@@ -38,20 +38,7 @@
             @include for-size(small) {
                 font-size: 14px;
             }
-        }
-    
-        .tags{
-            display: flex;
-    
-            .tag{
-                background-color: $primary-color;
-                color: white;
-                border-radius: 10px;
-                padding: 1% 6%;
-                font-size: 14px;
-                margin-right: 8%;
-            }
-        }  
+        } 
     
         .hote{
             display: flex;
@@ -98,15 +85,10 @@
         .stars{
             display: flex;
             font-size: 26px;
+            justify-content: space-between;
 
             @include for-size(small){
                 font-size: $small-font-size;
-            }
-            
-
-            .star{
-                margin-right: 10%;
-                color: $primary-color;
             }
 
             .star-inactive{
@@ -134,7 +116,6 @@
 
     
             .card-body{
-                color: $primary-color;
                 background-color: $secondary-color;
 
                 ul{

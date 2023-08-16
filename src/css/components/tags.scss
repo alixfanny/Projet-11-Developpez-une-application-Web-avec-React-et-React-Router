@@ -1,0 +1,14 @@
+@import '../variables';
+
+.tags{
+    display: flex;
+
+    .tag{
+        background-color: $primary-color;
+        color: white;
+        border-radius: 10px;
+        padding: 1% 6%;
+        font-size: 14px;
+        margin-right: 8%;
+    }
+} 

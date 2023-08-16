@@ -1,12 +1,11 @@
 @import '../variables';
 
 .not_found_texte{
-    font-family: "montserrat";
-    color: $primary-color;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 7%;
+    color: $primary-color;
 
     .error-number{
         font-size: 288px;

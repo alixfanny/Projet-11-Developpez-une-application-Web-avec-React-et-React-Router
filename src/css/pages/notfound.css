@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-.not_found_texte {
+*, *::before, *::after {
   font-family: "montserrat";
-  color: #ff6060;
+}
+
+.not_found_texte {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 7%;
+  color: #ff6060;
 }
 .not_found_texte .error-number {
   font-size: 288px;

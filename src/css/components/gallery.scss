@@ -1,55 +1,63 @@
 @import '../variables';
 
-.gallery{
-    .button-chrevon-gallery{
-        border: none;
-        background: none;
-        font-size: 61px;
+.gallery {
+    .button-chrevon-gallery, .image-count {
         position: absolute;
-        top: 47%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        z-index: 3;
         color: white;
+        cursor: pointer;
 
-        @include for-size(small){
-            top: 31%;
+        @include for-size(small) {
             font-size: 35px;
         }
     }
-    .button-chrevon-left{
+
+    .button-chrevon-gallery {
+        border: none;
+        background: none;
+        font-size: 61px;
+        top: 47%;
+        transform: translateY(-50%);
+        z-index: 3;
+
+        @include for-size(small) {
+            top: 31%;
+        }
+    }
+
+    .button-chrevon-left {
         left: 5%;
     }
-    .button-chrevon-right{
+
+    .button-chrevon-right {
         right: 5%;
     }
-    .image-wrapper{
+
+    .image-wrapper {
         position: relative;
         width: 92vw;
         height: 415px;
         overflow: hidden;
-        border-radius: 25px;
+        border-radius: $border-raduis;
         @include display(center, center);
 
-        @include for-size(small){
+        @include for-size(small) {
             height: 27vh;
         }
-    
-        .images-logement{
+
+        .images-logement {
             width: 100%;
 
-            @include for-size(small){
+            @include for-size(small) {
                 height: inherit;
             }
         }
     }
-    .image-count{
-        position: absolute;
+
+    .image-count {
         top: 68%;
         left: 50%;
-        color: white;
 
-        @include for-size(small){
+        @include for-size(small) {
             top: 39%;
             left: 47%;
         }

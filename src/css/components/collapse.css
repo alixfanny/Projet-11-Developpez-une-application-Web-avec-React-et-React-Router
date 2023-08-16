@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*, *::before, *::after {
+  font-family: "montserrat";
+}
+
 .my-collapse {
   background-color: #ff6060;
   margin-top: 2%;
@@ -17,23 +21,17 @@
   justify-content: space-between;
   align-items: baseline;
 }
-.my-collapse .button .btn {
+.my-collapse .button .btn, .my-collapse .button svg {
   color: white;
   font-size: 24px;
 }
 @media (max-width: 576px) {
-  .my-collapse .button .btn {
-    font-size: 13px;
+  .my-collapse .button .btn, .my-collapse .button svg {
+    font-size: 18px;
   }
 }
 .my-collapse .button svg {
-  font-size: 24px;
   padding-right: 2%;
-}
-@media (max-width: 576px) {
-  .my-collapse .button svg {
-    font-size: 18px;
-  }
 }
 .my-collapse .card {
   color: #ff6060;

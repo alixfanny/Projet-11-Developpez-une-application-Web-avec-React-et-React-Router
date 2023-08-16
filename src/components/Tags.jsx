@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/components/tags.css'
 
 function Tags({locations}) {
     return(

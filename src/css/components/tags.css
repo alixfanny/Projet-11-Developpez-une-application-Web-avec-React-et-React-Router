@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*, *::before, *::after {
+  font-family: "montserrat";
+}
+
+.tags {
+  display: flex;
+}
+.tags .tag {
+  background-color: #ff6060;
+  color: white;
+  border-radius: 10px;
+  padding: 1% 6%;
+  font-size: 14px;
+  margin-right: 8%;
+}/*# sourceMappingURL=tags.css.map */

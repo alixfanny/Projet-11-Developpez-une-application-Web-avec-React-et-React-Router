@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-.header {
+*, *::before, *::after {
   font-family: "montserrat";
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   color: #ff6060;
