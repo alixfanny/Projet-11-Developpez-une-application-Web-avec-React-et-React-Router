@@ -4,13 +4,12 @@
 }
 
 .container {
-  padding: 2% 4%;
   max-width: 93vw !important;
 }
 .container .banniere-text {
   position: absolute;
   z-index: 3;
-  top: 32%;
+  top: 28%;
   right: 31%;
   font-size: 48px;
   color: white;

@@ -5,6 +5,7 @@
 
 .tags {
   display: flex;
+  justify-content: space-between;
 }
 .tags .tag {
   background-color: #ff6060;
@@ -13,4 +14,9 @@
   padding: 1% 6%;
   font-size: 14px;
   margin-right: 8%;
+}
+@media (max-width: 576px) {
+  .tags .tag {
+    font-size: 8px;
+  }
 }/*# sourceMappingURL=tags.css.map */

@@ -23,7 +23,7 @@
 }
 @media (max-width: 576px) {
   .gallery .button-chrevon-gallery {
-    top: 31%;
+    top: 25%;
   }
 }
 .gallery .button-chrevon-left {
@@ -61,7 +61,8 @@
 }
 @media (max-width: 576px) {
   .gallery .image-count {
-    top: 39%;
-    left: 47%;
+    top: 31%;
+    left: 46%;
+    font-size: 18px;
   }
 }/*# sourceMappingURL=gallery.css.map */

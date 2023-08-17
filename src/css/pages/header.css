@@ -45,4 +45,9 @@
 }
 .header .acceuil {
   margin-right: 55px;
+}
+@media (max-width: 576px) {
+  .header .acceuil {
+    margin-right: 25px;
+  }
 }/*# sourceMappingURL=header.css.map */

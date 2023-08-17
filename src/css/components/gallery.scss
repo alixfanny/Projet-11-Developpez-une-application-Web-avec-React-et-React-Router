@@ -20,7 +20,7 @@
         z-index: 3;
 
         @include for-size(small) {
-            top: 31%;
+            top: 25%;
         }
     }
 
@@ -58,8 +58,9 @@
         left: 50%;
 
         @include for-size(small) {
-            top: 39%;
-            left: 47%;
+            top: 31%;
+            left: 46%;
+            font-size: $small-font-size;
         }
     }
 }

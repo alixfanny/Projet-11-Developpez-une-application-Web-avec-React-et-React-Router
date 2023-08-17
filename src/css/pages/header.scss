@@ -1,7 +1,6 @@
 @import '../variables';
 
 .header{
-    
     display: flex;
     justify-content: space-between;
     color: $primary-color;
@@ -43,5 +42,9 @@
 
     .acceuil{
         margin-right: 55px;
+
+        @include for-size(small){
+            margin-right: 25px;
+        }
     }
 }

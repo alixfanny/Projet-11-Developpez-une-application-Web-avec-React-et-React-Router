@@ -2,6 +2,7 @@
 
 .tags{
     display: flex;
+    justify-content: space-between;
 
     .tag{
         background-color: $primary-color;
@@ -10,5 +11,9 @@
         padding: 1% 6%;
         font-size: 14px;
         margin-right: 8%;
+
+        @include for-size(small){
+            font-size: 8px;
+        }
     }
 } 

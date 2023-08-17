@@ -10,10 +10,10 @@
   position: absolute;
   background-color: black;
   opacity: 0.3;
-  width: 91.2vw;
-  height: 32vh;
+  width: 91.7vw;
+  height: 30vh;
   left: 0;
-  margin-left: 4%;
+  margin-left: 3.7vw;
 }
 @media (max-width: 576px) {
   .containt-img .filter-img {
@@ -25,11 +25,14 @@
 }
 .containt-img .wrapper-image-banniere {
   overflow: hidden;
-  height: 227px;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .containt-img .wrapper-image-banniere .image {
-  margin-left: 0.2%;
-  height: 250px;
+  width: 100vw;
+  height: 100vh;
 }
 @media (max-width: 576px) {
   .containt-img .wrapper-image-banniere .image {
