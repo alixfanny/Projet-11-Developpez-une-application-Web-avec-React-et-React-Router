@@ -9,10 +9,10 @@
         position: absolute;
         background-color: black;
         opacity: 0.30;
-        width: 91.7vw;
+        width: 91.2vw;
         height: 30vh;
         left: 0;
-        margin-left: 3.7vw;
+        margin-left: 4vw;
 
         @include for-size(small) {
             height: 18vh;
