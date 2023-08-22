@@ -1,5 +1,6 @@
 {
   "name": "projet-kasa-react",
+  "homepage": "https://alixfanny.github.io/projet-kasa-react/build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
